@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Title</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/bootstrap.min.css">
+     <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/font-awesome.min.css">
+     <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/owl.carousel.css">
+     <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/style.css">
+
+     <style>
+          #Form{
+               background-image: url('http://127.0.0.1:5000/static/images/contact-1-600x400.jpg');
+               background-repeat: no-repeat;
+               background-size: 100% 100vh;
+               background-attachment: fixed;
+               padding: 50px;
+               height: 100vh;
+          }
+     </style>
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">Role Rader</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li class="active"><a href="/">Home</a></li>
+                         <li><a href="/">About Us</a></li>
+                         <li><a href="/">Contact Us</a></li>
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                              
+                              <ul class="dropdown-menu">
+                                   <li><a href="/asignin">Admin</a></li>
+                                   <li><a href="usignin">User</a></li>
+                                   <li><a href="/csignin">company</a></li>
+                              </ul>
+                         </li>
+                        
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+     <section id="Form">
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-md-6" style="border: 1px solid #ddd;padding: 25px;background-color: white;padding: 10px 50px;">
+                         <center><h3>Company Signup</h3></center>
+                         <hr><br>
+                         <form action="/csignup" method="post">
+                              <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+                              <br>
+                              <input type="email" class="form-control" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" name="email" placeholder="Enter email" required>
+                              <br>
+                              <input type="number" class="form-control" pattern="[6-9]{1}[0-9]{9}" 
+                              title="Phone number with 6-9 and remaing 9 digit with 0-9" name="phone" placeholder="Enter phone" required>
+                              <br>
+                              <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                              title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" name="password" placeholder="Enter password" required>
+                              <br>
+                              <input type="submit" class="btn btn-success">
+                              <br>
+                             
+                         </form>
+                         <p>Already have account? <a href="/csignin">Signin</a></p>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- SCRIPTS -->
+     <script src="http://127.0.0.1:5000/static/js/jquery.js"></script>
+     <script src="http://127.0.0.1:5000/static/js/bootstrap.min.js"></script>
+     <script src="http://127.0.0.1:5000/static/js/owl.carousel.min.js"></script>
+     <script src="http://127.0.0.1:5000/static/js/smoothscroll.js"></script>
+     <script src="http://127.0.0.1:5000/static/js/custom.js"></script>
+
+     <script>
+          if('{{msg}}'){
+               alert('{{msg}}');
+          }
+     </script>
+</body>
+</html>
